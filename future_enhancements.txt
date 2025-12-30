@@ -1,0 +1,37 @@
+# 🚀 T-Watch S3 20XX - Future Enhancements
+Ideas for the next development session.
+
+### 🛠️ Utility Features
+1.  **💾 Persistent Settings**
+    - Save custom color choices (`settings.toml` or similar) so they survive reboots.
+    - Currently resets to Orange/Green on restart.
+
+2.  **⏱️ Stopwatch Mode**
+    - Count-up timer functionality.
+    - Lap time tracking feature.
+
+3.  **🔆 Brightness Slider**
+    - Add 3rd slider to Settings Page.
+    - Control `display.brightness` (0.0 to 1.0).
+
+4.  **🔦 Flashlight App**
+    - Simple toggle to turn screen full white/bright.
+    - Quick access for dark situations.
+
+### 🤖 Hardware Features
+5.  **👟 Pedometer / Step Counter**
+    - Usage of `adafruit_lis3dh` accelerometer.
+    - Step counting algorithm and daily goal tracking.
+
+6.  **👋 Lift-to-Wake**
+    - Detect wrist movement via accelerometer.
+    - Auto-wake display from sleep.
+
+### 🎨 Visual & Fun
+7.  **🌊 Matrix Screensaver**
+    - "Digital rain" effect before full sleep.
+    - Cyberpunk aesthetic enhancement.
+
+8.  **ℹ️ System Status Page**
+    - Display raw stats: RAM usage, CPU temp, Uptime.
+    - Battery voltage (in addition to %).
