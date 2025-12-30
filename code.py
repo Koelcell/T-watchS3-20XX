@@ -122,13 +122,17 @@ def update_all_colors():
     h_main.color = current_text_color
     m_main.color = current_text_color
     s_main.color = current_text_color
+    c_main.color = current_text_color
     for l in h_layers[:8]: l.color = current_outline_color
     for l in m_layers[:8]: l.color = current_outline_color
+    for l in c_layers[:8]: l.color = current_outline_color
     # Update timer labels
     t_m_label.color = current_text_color
     t_s_label.color = current_text_color
+    t_c_main.color = current_text_color
     for l in t_m_layers[:8]: l.color = current_outline_color
     for l in t_s_layers[:8]: l.color = current_outline_color
+    for l in t_c_layers[:8]: l.color = current_outline_color
     # Update date labels
     date_label.color = current_text_color
     date_num_label.color = current_text_color
@@ -149,7 +153,7 @@ def update_all_colors():
 
 # Main Clock UI
 h_group, h_main, h_layers = create_double_outline_label("00", 60, 88, 9, ORANGE)
-c_group, _, _ = create_double_outline_label(":", 129, 88, 9, ORANGE)
+c_group, c_main, c_layers = create_double_outline_label(":", 129, 88, 9, ORANGE)
 m_group, m_main, m_layers = create_double_outline_label("00", 189, 88, 9, ORANGE)
 
 # Seconds Container - Left side 2px closer to center (x=89), width reduced (w=64) to keep right edge fixed
@@ -162,7 +166,7 @@ main_group.append(sec_rect); main_group.append(s_group)
 
 # Timer Page UI
 t_m_group, t_m_label, t_m_layers = create_double_outline_label("00", 60, 88, 9, ORANGE)
-t_c_group, _, _ = create_double_outline_label(":", 129, 88, 9, ORANGE)
+t_c_group, t_c_main, t_c_layers = create_double_outline_label(":", 129, 88, 9, ORANGE)
 t_s_group, t_s_label, t_s_layers = create_double_outline_label("00", 189, 88, 9, ORANGE)
 timer_page.append(t_m_group); timer_page.append(t_c_group); timer_page.append(t_s_group)
 

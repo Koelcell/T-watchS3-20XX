@@ -211,6 +211,7 @@ Custom watch interface for the Lilygo T-Watch S3 2020 with multiple pages, custo
 - 🎨 Settings page now follows the global color theme
 - **Outlines**: Page border and slider outlines update with `Outline Color`
 - **Handles**: Slider handles update with `Text Color`
+- **Colons**: Clock and timer separators (`:`) now update dynamically
 - Removed static gray/white elements for a cohesive look
 
 ### **2025-12-30 02:02 - Bug Fix: Slider Index Error**
