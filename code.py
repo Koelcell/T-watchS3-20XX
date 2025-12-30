@@ -63,26 +63,26 @@ root_group.append(timer_page)
 settings_page = displayio.Group()
 settings_bg_sprite = displayio.TileGrid(bg_bitmap, pixel_shader=bg_palette, width=240, height=240)
 settings_page.append(settings_bg_sprite)
-settings_outline = Rect(0, 0, 240, 240, fill=None, outline=GRAY, stroke=4)
+settings_outline = Rect(0, 0, 240, 240, fill=None, outline=DARK_GREEN, stroke=4)
 settings_page.append(settings_outline)
 
 # Settings UI - Color Sliders
 # Text Color Slider (top)
-text_color_preview = Rect(20, 30, 40, 40, fill=ORANGE, outline=0xFFFFFF, stroke=2)
+text_color_preview = Rect(20, 30, 40, 40, fill=ORANGE, outline=DARK_GREEN, stroke=2)
 settings_page.append(text_color_preview)
-text_slider_bg = Rect(20, 85, 200, 20, fill=0x000000, outline=0xFFFFFF, stroke=2)
+text_slider_bg = Rect(20, 85, 200, 20, fill=0x000000, outline=DARK_GREEN, stroke=2)
 settings_page.append(text_slider_bg)
-text_slider_handle = Rect(20, 83, 10, 24, fill=0xFFFFFF)
+text_slider_handle = Rect(20, 83, 10, 24, fill=ORANGE)
 settings_page.append(text_slider_handle)
 text_label = label.Label(terminalio.FONT, text="Text Color", color=0xFFFFFF, scale=1, x=70, y=45)
 settings_page.append(text_label)
 
 # Outline Color Slider (bottom)
-outline_color_preview = Rect(20, 130, 40, 40, fill=DARK_GREEN, outline=0xFFFFFF, stroke=2)
+outline_color_preview = Rect(20, 130, 40, 40, fill=DARK_GREEN, outline=DARK_GREEN, stroke=2)
 settings_page.append(outline_color_preview)
-outline_slider_bg = Rect(20, 185, 200, 20, fill=0x000000, outline=0xFFFFFF, stroke=2)
+outline_slider_bg = Rect(20, 185, 200, 20, fill=0x000000, outline=DARK_GREEN, stroke=2)
 settings_page.append(outline_slider_bg)
-outline_slider_handle = Rect(20, 183, 10, 24, fill=0xFFFFFF)
+outline_slider_handle = Rect(20, 183, 10, 24, fill=ORANGE)
 settings_page.append(outline_slider_handle)
 outline_label = label.Label(terminalio.FONT, text="Outline Color", color=0xFFFFFF, scale=1, x=70, y=145)
 settings_page.append(outline_label)
@@ -138,6 +138,14 @@ def update_all_colors():
     # Update battery
     batt_outline.outline = current_text_color
     batt_tip.fill = current_text_color
+    # Update settings UI
+    settings_outline.outline = current_outline_color
+    text_slider_bg.outline = current_outline_color
+    outline_slider_bg.outline = current_outline_color
+    text_color_preview.outline = current_outline_color
+    outline_color_preview.outline = current_outline_color
+    text_slider_handle.fill = current_text_color
+    outline_slider_handle.fill = current_text_color
 
 # Main Clock UI
 h_group, h_main, h_layers = create_double_outline_label("00", 60, 88, 9, ORANGE)
@@ -251,11 +259,11 @@ while True:
                         # Update slider handle position
                         settings_page.remove(text_slider_handle)
                         handle_x = 20 + int(text_color_index / (len(color_palette) - 1) * 190)
-                        text_slider_handle = Rect(handle_x, 83, 10, 24, fill=0xFFFFFF)
+                        text_slider_handle = Rect(handle_x, 83, 10, 24, fill=current_text_color)
                         settings_page.append(text_slider_handle)
                         # Update preview square
                         settings_page.remove(text_color_preview)
-                        text_color_preview = Rect(20, 30, 40, 40, fill=current_text_color, outline=0xFFFFFF, stroke=2)
+                        text_color_preview = Rect(20, 30, 40, 40, fill=current_text_color, outline=current_outline_color, stroke=2)
                         settings_page.append(text_color_preview)
                         update_all_colors()
                     # Check if touching outline color slider area
@@ -268,11 +276,11 @@ while True:
                         # Update slider handle position
                         settings_page.remove(outline_slider_handle)
                         handle_x = 20 + int(outline_color_index / (len(color_palette) - 1) * 190)
-                        outline_slider_handle = Rect(handle_x, 183, 10, 24, fill=0xFFFFFF)
+                        outline_slider_handle = Rect(handle_x, 183, 10, 24, fill=current_text_color)
                         settings_page.append(outline_slider_handle)
                         # Update preview square
                         settings_page.remove(outline_color_preview)
-                        outline_color_preview = Rect(20, 130, 40, 40, fill=current_outline_color, outline=0xFFFFFF, stroke=2)
+                        outline_color_preview = Rect(20, 130, 40, 40, fill=current_outline_color, outline=current_outline_color, stroke=2)
                         settings_page.append(outline_color_preview)
                         update_all_colors()
                     elif ty > 200:
