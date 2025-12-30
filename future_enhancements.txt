@@ -1,37 +1,86 @@
 # 🚀 T-Watch S3 20XX - Future Enhancements
+
 Ideas for the next development session.
 
 ### 🛠️ Utility Features
-1.  **💾 Persistent Settings**
-    - Save custom color choices (`settings.toml` or similar) so they survive reboots.
-    - Currently resets to Orange/Green on restart.
 
-2.  **⏱️ Stopwatch Mode**
-    - Count-up timer functionality.
-    - Lap time tracking feature.
+1.  **🧮 Calculator Page**
+    - Basic 4-function calculator (+, -, *, /).
+    - Large touch-friendly grid buttons.
 
-3.  **🔆 Brightness Slider**
-    - Add 3rd slider to Settings Page.
-    - Control `display.brightness` (0.0 to 1.0).
+2.  **⏲️ Pomodoro Productivity Timer**
+    - 25m/5m cycles with visual progress rings.
+    - Automatic mode switching.
 
-4.  **🔦 Flashlight App**
-    - Simple toggle to turn screen full white/bright.
-    - Quick access for dark situations.
+3.  **🔦 Quick Flashlight**
+    - 100% white screen at max brightness.
+    - Quick-toggle from settings or main clock.
 
-### 🤖 Hardware Features
-5.  **👟 Pedometer / Step Counter**
+4.  **🌎 World Clock**
+    - Secondary timezone display on main clock.
+    - Configurable GMT offset in settings.
+
+5.  **🎵 BLE Music Remote**
+    - Play/Pause and Volume control for your phone via Bluetooth.
+    - Media status display.
+
+6.  **🎲 Dice Roller**
+    - Random number generation for 1-2 dice.
+    - Interactive roll animation.
+
+### 🎮 Gaming & Fun
+
+7.  **🎮 Retro Game: Cyber-Snake**
+    - Use the touchscreen for 4-way navigation.
+    - High score tracking in persistent memory.
+
+8.  **🥁 Metronome**
+    - Pulse the vibration motor at specific BPM.
+    - Visual "tempo flash" on screen.
+
+9.  **🎨 Sketchpad**
+    - Finger-painting canvas with simple color selection.
+    - Save/Load doodles to the filesystem.
+
+### 🤖 Hardware & Health
+
+10. **👟 Pedometer / Step Counter**
     - Usage of `adafruit_lis3dh` accelerometer.
     - Step counting algorithm and daily goal tracking.
 
-6.  **👋 Lift-to-Wake**
+11. **👋 Lift-to-Wake**
     - Detect wrist movement via accelerometer.
     - Auto-wake display from sleep.
 
-### 🎨 Visual & Fun
-7.  **🌊 Matrix Screensaver**
+12. **📳 Haptic Touch Feedback**
+    - Pulse the vibration motor on button taps and slider changes.
+    - Distinct "alarm" vibration for the timer.
+
+13. **🌬️ Breathing Guide**
+    - Rhythmic visual pulsing to guide deep breathing exercises.
+    - Adjustable "breaths per minute" setting.
+
+14. **💧 Water Tracker**
+    - Daily intake logger with progress bar.
+
+### 🎨 Visual & Advanced Settings
+
+15. **🌊 Matrix Screensaver**
     - "Digital rain" effect before full sleep.
     - Cyberpunk aesthetic enhancement.
 
-8.  **ℹ️ System Status Page**
-    - Display raw stats: RAM usage, CPU temp, Uptime.
-    - Battery voltage (in addition to %).
+16. **ℹ️ System Status Page**
+    - Display raw stats: RAM usage, CPU temp, Uptime, Battery Voltage.
+
+17. **🛌 Nightstand Mode**
+    - Landscape (90 degree) clock layout when charging.
+    - Dim red/green high-contrast colors for night legibility.
+
+18. **🔒 Pattern/PIN Lock**
+    - Secure the settings or whole watch with a touch pattern.
+
+19. **📡 Wi-Fi Signal Radar**
+    - Visual map of nearby access points and signal strength.
+
+20. **🔗 QR Code "Business Card"**
+    - Display a custom QR code for your website or contact info.
